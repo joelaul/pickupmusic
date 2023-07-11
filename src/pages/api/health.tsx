@@ -5,8 +5,9 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<string>,
 ) {
-  if (req.method !== 'GET') {
+  if (req.method === 'GET') {
+    res.status(OK).send('ok');
+  } else {
     res.status(METHOD_NOT_ALLOWED);
   }
-  res.status(OK).send('ok');
 }
