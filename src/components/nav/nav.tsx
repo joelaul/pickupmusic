@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { MenuItem } from "@/components/nav/menuitem";
-import { ProfileDropdown } from "@/components/nav/profiledropdown";
-import { useToggleControls } from "@/components/nav/useToggleControls";
+import { MenuItem } from '@/components/nav/menuitem';
+import { ProfileDropdown } from '@/components/nav/profiledropdown';
+import { useToggleControls } from '@/components/nav/useToggleControls';
 
 const MENU_ITEMS: { title: string; href: string }[] = [
-  { title: "Dashboard", href: "/" },
-  { title: "Lessons", href: "/5-min-lessons" },
-  { title: "Search", href: "/search" },
+  { title: 'Dashboard', href: '/' },
+  { title: 'Lessons', href: '/5-min-lessons' },
+  { title: 'Search', href: '/search' },
 ];
 
 /**
@@ -15,8 +15,8 @@ const MENU_ITEMS: { title: string; href: string }[] = [
  */
 export default function Nav() {
   const [isMenuOpen, toggleMenu] = useToggleControls();
-  const openMenuIconClassNames = isMenuOpen ? "block" : "hidden";
-  const closedMenuIconClassNames = isMenuOpen ? "hidden" : "block";
+  const openMenuIconClassNames = isMenuOpen ? 'block' : 'hidden';
+  const closedMenuIconClassNames = isMenuOpen ? 'hidden' : 'block';
 
   const [isProfileDropdownOpen, toggleProfileDropdown] = useToggleControls();
 
