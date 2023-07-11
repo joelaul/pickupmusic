@@ -1,5 +1,3 @@
 export default function ClassesLeaf() {
-    return (
-        <div>BlogLeaf</div>
-    );
-  }
+  return <div>BlogLeaf</div>;
+}
