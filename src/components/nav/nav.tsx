@@ -59,7 +59,7 @@ export default function Nav() {
             <div className="flex flex-shrink-0 items-center">
               <img
                 className="block h-8 w-auto lg:hidden"
-                src="public/pickupmusic_logo.jpeg"
+                src="/logo.png"
                 alt="Your Company"
               />
               <img
