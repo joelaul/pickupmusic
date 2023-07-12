@@ -1,10 +1,10 @@
 "use client";
 
-export type MenuProps = {
+export type ProfileDropdownProps = {
   open: boolean;
 };
 
-export const Menu: React.FC<MenuProps> = (props) => {
+export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
   const menuTransitionClassNames = props.open
     ? "transition ease-out duration-100"
     : "transition ease-in duration-75";
