@@ -6,10 +6,7 @@ export type ProfileDropdownProps = {
   open: boolean;
 };
 
-const PROFILE_ITEMS: NavItem[] = [
-  { title: 'Profile', href: '/profile' },
-  { title: 'Settings', href: '/settings' },
-];
+const PROFILE_ITEMS: NavItem[] = [{ title: 'Settings', href: '/settings' }];
 
 export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
   const menuTransitionClassNames = props.open
