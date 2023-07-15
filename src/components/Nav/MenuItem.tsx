@@ -2,6 +2,7 @@ import { NAV_MENU_SELECTED_BACKGROUND_COLOR_CLASS_NAMES } from '@/components/Nav
 
 type MenuItemProps = {
   block: boolean;
+  selected: boolean;
   title: string;
   href: string;
 };
@@ -13,8 +14,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
     classNames.push('block');
   }
 
-  const url = new URL(location.href);
-  if (url.pathname === props.href) {
+  if (props.selected) {
     classNames.push(NAV_MENU_SELECTED_BACKGROUND_COLOR_CLASS_NAMES);
   }
 

@@ -25,6 +25,8 @@ export function Nav() {
     closeProfileDropdown,
   ] = useToggleControls();
 
+  const url = new URL(location.href);
+
   return (
     <nav className={NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES}>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -90,6 +92,7 @@ export function Nav() {
                 {MENU_ITEMS.map(({ title, href }) => (
                   <MenuItem
                     block={false}
+                    selected={url.pathname === href}
                     key={title}
                     title={title}
                     href={href}
@@ -133,7 +136,13 @@ export function Nav() {
         <div className="sm:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
             {MENU_ITEMS.map(({ title, href }) => (
-              <MenuItem block={true} key={title} title={title} href={href} />
+              <MenuItem
+                block={true}
+                selected={url.pathname === href}
+                key={title}
+                title={title}
+                href={href}
+              />
             ))}
           </div>
         </div>
