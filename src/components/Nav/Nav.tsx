@@ -8,6 +8,7 @@ import {
   MENU_ITEMS,
   NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES,
 } from '@/components/Nav/constants';
+import { useRouter } from 'next/router';
 
 /**
  * The navigation of the application.
