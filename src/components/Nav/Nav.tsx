@@ -8,7 +8,6 @@ import {
   MENU_ITEMS,
   NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES,
 } from '@/components/Nav/constants';
-import { useRouter } from 'next/router';
 
 /**
  * The navigation of the application.
@@ -72,20 +71,24 @@ export function Nav() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <Image
-                className="block h-8 w-auto lg:hidden"
-                src="/logo.png"
-                width={24}
-                height={24}
-                alt="pickupmusic"
-              />
-              <Image
-                className="hidden h-8 w-auto lg:block"
-                src="/logo.png"
-                width={24}
-                height={24}
-                alt="pickupmusic"
-              />
+              <a href="/">
+                <Image
+                  id="mobile-logo"
+                  className="block h-8 w-auto lg:hidden"
+                  src="/logo.png"
+                  width={24}
+                  height={24}
+                  alt="pickupmusic"
+                />
+                <Image
+                  id="desktop-logo"
+                  className="hidden h-8 w-auto lg:block"
+                  src="/logo.png"
+                  width={24}
+                  height={24}
+                  alt="pickupmusic"
+                />
+              </a>
             </div>
             <div className="hidden sm:ml-6 sm:block" id="desktop-menu">
               <div className="flex space-x-4">
