@@ -1,7 +1,6 @@
 'use client';
 
-import { PROFILE_DROPDOWN_ITEMS } from '@/components/Nav1/constants';
-import { NavItem } from '@/components/Nav1/types';
+import { PROFILE_DROPDOWN_ITEMS } from '@/components/Nav/constants';
 
 export type ProfileDropdownProps = {
   open: boolean;

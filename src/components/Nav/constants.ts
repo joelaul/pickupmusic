@@ -1,4 +1,4 @@
-import { NavItem } from '@/components/Nav1/types';
+import { NavItem } from '@/components/Nav/types';
 
 export const MENU_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
