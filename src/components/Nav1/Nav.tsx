@@ -1,10 +1,10 @@
 'use client';
 
-import { useToggleControls } from '@/components/Nav/hooks';
+import { useToggleControls } from '@/components/Nav1/hooks';
 import Image from 'next/image';
-import { MenuItem } from '@/components/Nav/MenuItem';
-import { ProfileDropdown } from '@/components/Nav/ProfileDropdown';
-import { MENU_ITEMS } from '@/components/Nav/constants';
+import { MenuItem } from '@/components/Nav1/MenuItem';
+import { ProfileDropdown } from '@/components/Nav/ProfileDropdown;
+import { MENU_ITEMS } from '@/components/Nav1/constants';
 
 /**
  * The navigation of the application.
