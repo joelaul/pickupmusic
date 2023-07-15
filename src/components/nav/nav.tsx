@@ -2,11 +2,12 @@
 
 import { MenuItem } from '@/components/nav/menuitem';
 import { ProfileDropdown } from '@/components/nav/profiledropdown';
+import { NavItem } from '@/components/nav/types';
 import { useToggleControls } from '@/components/nav/useToggleControls';
 
-const MENU_ITEMS: { title: string; href: string }[] = [
-  { title: 'Dashboard', href: '/' },
-  { title: 'Lessons', href: '/5-min-lessons' },
+const MENU_ITEMS: NavItem[] = [
+  { title: 'Home', href: '/' },
+  { title: 'Classes', href: '/classes' },
   { title: 'Search', href: '/search' },
 ];
 

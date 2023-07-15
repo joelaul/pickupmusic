@@ -1,8 +1,15 @@
 'use client';
 
+import { NavItem } from '@/components/nav/types';
+
 export type ProfileDropdownProps = {
   open: boolean;
 };
+
+const PROFILE_ITEMS: NavItem[] = [
+  { title: 'Profile', href: '/profile' },
+  { title: 'Settings', href: '/settings' },
+];
 
 export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
   const menuTransitionClassNames = props.open
@@ -20,33 +27,18 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
       aria-orientation="vertical"
       aria-labelledby="user-menu-button"
     >
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray-700"
-        role="menuitem"
-        tabIndex={-1}
-        id="user-menu-item-0"
-      >
-        Your Profile
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray-700"
-        role="menuitem"
-        tabIndex={-1}
-        id="user-menu-item-1"
-      >
-        Settings
-      </a>
-      <a
-        href="#"
-        className="block px-4 py-2 text-sm text-gray-700"
-        role="menuitem"
-        tabIndex={-1}
-        id="user-menu-item-2"
-      >
-        Sign out
-      </a>
+      {PROFILE_ITEMS.map(({ title, href }) => (
+        <a
+          key={title}
+          href={href}
+          className="block px-4 py-2 text-sm text-gray-700"
+          role="menuitem"
+          tabIndex={-1}
+          id="user-menu-item-0"
+        >
+          {title}
+        </a>
+      ))}
     </div>
   );
 };
