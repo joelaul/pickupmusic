@@ -4,6 +4,7 @@ import { MenuItem } from '@/components/nav/menuitem';
 import { ProfileDropdown } from '@/components/nav/profiledropdown';
 import { NavItem } from '@/components/nav/types';
 import { useToggleControls } from '@/components/nav/useToggleControls';
+import Image from 'next/image';
 
 const MENU_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
@@ -66,14 +67,18 @@ export default function Nav() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <img
+              <Image
                 className="block h-8 w-auto lg:hidden"
                 src="/logo.png"
+                width={16}
+                height={16}
                 alt="pickupmusic"
               />
-              <img
+              <Image
                 className="hidden h-8 w-auto lg:block"
                 src="/logo.png"
+                width={16}
+                height={16}
                 alt="pickupmusic"
               />
             </div>
@@ -102,7 +107,13 @@ export default function Nav() {
                   aria-haspopup="true"
                 >
                   <span className="sr-only">Open user menu</span>
-                  <img className="h-8 w-8 rounded-full" src="/sam.png" alt="" />
+                  <Image
+                    className="h-8 w-8 rounded-full"
+                    src="/sam.png"
+                    width={16}
+                    height={16}
+                    alt="profile picture"
+                  />
                 </button>
               </div>
 
