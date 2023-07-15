@@ -3,8 +3,11 @@
 import { useToggleControls } from '@/components/Nav/hooks';
 import Image from 'next/image';
 import { MenuItem } from '@/components/Nav/MenuItem';
-import { MENU_ITEMS } from '@/components/Nav/constants';
 import { ProfileDropdown } from '@/components/Nav/ProfileDropdown';
+import {
+  MENU_ITEMS,
+  NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES,
+} from '@/components/Nav/constants';
 
 /**
  * The navigation of the application.
@@ -14,10 +17,15 @@ export function Nav() {
   const openMenuIconClassNames = isMenuOpen ? 'block' : 'hidden';
   const closedMenuIconClassNames = isMenuOpen ? 'hidden' : 'block';
 
-  const [isProfileDropdownOpen, toggleProfileDropdown] = useToggleControls();
+  const [
+    isProfileDropdownOpen,
+    toggleProfileDropdown,
+    openProfileDropdown,
+    closeProfileDropdown,
+  ] = useToggleControls();
 
   return (
-    <nav className="bg-gray-950">
+    <nav className={NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES}>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -33,13 +41,13 @@ export function Nav() {
                 className={`block h-6 w-6 ${closedMenuIconClassNames}`}
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
@@ -47,13 +55,13 @@ export function Nav() {
                 className={`h-6 w-6 ${openMenuIconClassNames}`}
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -64,15 +72,15 @@ export function Nav() {
               <Image
                 className="block h-8 w-auto lg:hidden"
                 src="/logo.png"
-                width={16}
-                height={16}
+                width={24}
+                height={24}
                 alt="pickupmusic"
               />
               <Image
                 className="hidden h-8 w-auto lg:block"
                 src="/logo.png"
-                width={16}
-                height={16}
+                width={24}
+                height={24}
                 alt="pickupmusic"
               />
             </div>
@@ -95,7 +103,7 @@ export function Nav() {
                 <button
                   type="button"
                   onClick={toggleProfileDropdown}
-                  className="flex rounded-full bg-gray-950 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className={`${NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES} flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800`}
                   id="user-menu-button"
                   aria-expanded="false"
                   aria-haspopup="true"
@@ -104,14 +112,17 @@ export function Nav() {
                   <Image
                     className="h-8 w-8 rounded-full"
                     src="/sam.png"
-                    width={16}
-                    height={16}
+                    width={24}
+                    height={24}
                     alt="profile picture"
                   />
                 </button>
               </div>
 
-              <ProfileDropdown open={isProfileDropdownOpen} />
+              <ProfileDropdown
+                open={isProfileDropdownOpen}
+                onClickOutside={closeProfileDropdown}
+              />
             </div>
           </div>
         </div>

@@ -1,11 +1,53 @@
-import { useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
-export const useToggleControls = (): [open: boolean, toggle: () => void] => {
-  const [open, setOpen] = useState(false);
+/**
+ * A hook for controling a toggle.
+ */
+export const useToggleControls = (): [
+  isOpen: boolean,
+  toggle: () => void,
+  open: () => void,
+  close: () => void,
+] => {
+  const [isOpen, setIsOpen] = useState(false);
 
   function toggle() {
-    setOpen((isProfileDropdownOpen) => !isProfileDropdownOpen);
+    setIsOpen((isProfileDropdownOpen) => !isProfileDropdownOpen);
   }
 
-  return [open, toggle];
+  function open() {
+    setIsOpen(true);
+  }
+
+  function close() {
+    setIsOpen(false);
+  }
+
+  return [isOpen, toggle, open, close];
+};
+
+export const useClickOutside = (
+  ref: RefObject<HTMLElement>,
+  onClick: (event: MouseEvent) => void,
+) => {
+  useEffect(() => {
+    const onDocumentClick = (e: MouseEvent) => {
+      const element = ref.current;
+      if (!element) {
+        return;
+      }
+
+      if (element.contains(e.target as Node)) {
+        return;
+      }
+
+      onClick(e);
+    };
+
+    document.addEventListener('click', onDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', onDocumentClick);
+    };
+  }, [ref, onClick]);
 };

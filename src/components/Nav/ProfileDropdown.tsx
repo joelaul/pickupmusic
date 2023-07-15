@@ -1,9 +1,12 @@
 'use client';
 
 import { PROFILE_DROPDOWN_ITEMS } from '@/components/Nav/constants';
+import { useClickOutside } from '@/components/Nav/hooks';
+import { forwardRef, useRef } from 'react';
 
 export type ProfileDropdownProps = {
   open: boolean;
+  onClickOutside: () => void;
 };
 
 export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
@@ -15,8 +18,12 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
     : 'transform opacity-0 scale-95';
   const menuClassNames = `${menuTransitionClassNames} ${menuTransformClassNames}`;
 
+  const ref = useRef<HTMLDivElement>(null);
+  useClickOutside(ref, props.onClickOutside);
+
   return (
     <div
+      ref={ref}
       className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${menuClassNames}`}
       role="menu"
       aria-orientation="vertical"
