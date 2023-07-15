@@ -23,7 +23,7 @@ export default function Nav() {
   const [isProfileDropdownOpen, toggleProfileDropdown] = useToggleControls();
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-950">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -101,7 +101,7 @@ export default function Nav() {
                 <button
                   type="button"
                   onClick={toggleProfileDropdown}
-                  className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="flex rounded-full bg-gray-950 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   id="user-menu-button"
                   aria-expanded="false"
                   aria-haspopup="true"
