@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 export type ProfileDropdownProps = {
   open: boolean;
@@ -6,11 +6,11 @@ export type ProfileDropdownProps = {
 
 export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
   const menuTransitionClassNames = props.open
-    ? "transition ease-out duration-100"
-    : "transition ease-in duration-75";
+    ? 'transition ease-out duration-100'
+    : 'transition ease-in duration-75';
   const menuTransformClassNames = props.open
-    ? "transform opacity-100 scale-100"
-    : "transform opacity-0 scale-95";
+    ? 'transform opacity-100 scale-100'
+    : 'transform opacity-0 scale-95';
   const menuClassNames = `${menuTransitionClassNames} ${menuTransformClassNames}`;
 
   return (

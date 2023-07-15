@@ -1,5 +1,5 @@
-// For https://www.pickupmusic.com
+import Image from 'next/image';
 
-export default function Index() {
-  return <div>Index</div>;
+export default function Home() {
+  return <main>Home</main>;
 }

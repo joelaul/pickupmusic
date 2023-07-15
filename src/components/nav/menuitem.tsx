@@ -5,7 +5,7 @@ type MenuItemProps = {
 };
 
 export const MenuItem: React.FC<MenuItemProps> = (props) => {
-  const classNames = props.block ? "block" : "";
+  const classNames = props.block ? 'block' : '';
 
   return (
     <a

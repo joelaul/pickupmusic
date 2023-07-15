@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useToggleControls = (): [open: boolean, toggle: () => void] => {
   const [open, setOpen] = useState(false);
