@@ -24,7 +24,8 @@ export function Nav() {
     closeProfileDropdown,
   ] = useToggleControls();
 
-  const url = new URL(location.href);
+  const href = typeof window === 'undefined' ? '' : window.location.href;
+  const url = new URL(href);
 
   return (
     <nav className={NAV_MENU_BACKGROUND_COLOR_CLASS_NAMES}>
