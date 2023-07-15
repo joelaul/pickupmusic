@@ -2,17 +2,17 @@
 
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { classNames } from '@/lib/css/classNames';
-import { getCurrentUrl } from '@/components/Nav/util';
 import { MENU_ITEMS } from '@/components/Nav/constants';
+import { usePathname } from 'next/navigation';
 
 export const Nav = () => {
-  const url = getCurrentUrl();
+  const pathname = usePathname();
 
   function isCurrent(href: string) {
-    return url.pathname === href;
+    return pathname === href;
   }
 
   return (
