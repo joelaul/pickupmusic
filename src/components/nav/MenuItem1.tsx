@@ -4,7 +4,7 @@ type MenuItemProps = {
   href: string;
 };
 
-const MenuItem: React.FC<MenuItemProps> = (props) => {
+export const MenuItem: React.FC<MenuItemProps> = (props) => {
   const classNames = props.block ? 'block' : '';
 
   return (
@@ -17,5 +17,3 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     </a>
   );
 };
-
-export default MenuItem;

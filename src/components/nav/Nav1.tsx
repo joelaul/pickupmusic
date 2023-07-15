@@ -1,21 +1,15 @@
 'use client';
 
-import { NavItem } from '@/components/nav/types';
-import { useToggleControls } from '@/components/nav/hooks';
+import { useToggleControls } from '@/components/Nav/hooks';
 import Image from 'next/image';
-import ProfileDropdown from '@/components/nav/profiledropdown';
-import MenuItem from '@/components/nav/menuitem';
-
-const MENU_ITEMS: NavItem[] = [
-  { title: 'Home', href: '/' },
-  { title: 'Classes', href: '/classes' },
-  { title: 'Search', href: '/search' },
-];
+import { MenuItem } from '@/components/Nav/MenuItem';
+import { ProfileDropdown } from '@/components/Nav/ProfileDropdown';
+import { MENU_ITEMS } from '@/components/Nav/constants';
 
 /**
  * The navigation of the application.
  */
-export default function Nav() {
+export function Nav() {
   const [isMenuOpen, toggleMenu] = useToggleControls();
   const openMenuIconClassNames = isMenuOpen ? 'block' : 'hidden';
   const closedMenuIconClassNames = isMenuOpen ? 'hidden' : 'block';

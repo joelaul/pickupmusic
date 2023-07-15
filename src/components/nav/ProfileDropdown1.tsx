@@ -1,14 +1,13 @@
 'use client';
 
-import { NavItem } from '@/components/nav/types';
+import { PROFILE_DROPDOWN_ITEMS } from '@/components/Nav/constants';
+import { NavItem } from '@/components/Nav/types';
 
 export type ProfileDropdownProps = {
   open: boolean;
 };
 
-const PROFILE_ITEMS: NavItem[] = [{ title: 'Settings', href: '/settings' }];
-
-const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
+export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
   const menuTransitionClassNames = props.open
     ? 'transition ease-out duration-100'
     : 'transition ease-in duration-75';
@@ -24,7 +23,7 @@ const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
       aria-orientation="vertical"
       aria-labelledby="user-menu-button"
     >
-      {PROFILE_ITEMS.map(({ title, href }) => (
+      {PROFILE_DROPDOWN_ITEMS.map(({ title, href }) => (
         <a
           key={title}
           href={href}
@@ -39,5 +38,3 @@ const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
     </div>
   );
 };
-
-export default ProfileDropdown;
