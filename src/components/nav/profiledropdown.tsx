@@ -8,7 +8,7 @@ export type ProfileDropdownProps = {
 
 const PROFILE_ITEMS: NavItem[] = [{ title: 'Settings', href: '/settings' }];
 
-export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
+const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
   const menuTransitionClassNames = props.open
     ? 'transition ease-out duration-100'
     : 'transition ease-in duration-75';
@@ -39,3 +39,5 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = (props) => {
     </div>
   );
 };
+
+export default ProfileDropdown;

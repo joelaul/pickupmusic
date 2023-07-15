@@ -1,10 +1,10 @@
 'use client';
 
-import { MenuItem } from '@/components/nav/menuitem';
-import { ProfileDropdown } from '@/components/nav/profiledropdown';
 import { NavItem } from '@/components/nav/types';
-import { useToggleControls } from '@/components/nav/useToggleControls';
+import { useToggleControls } from '@/components/nav/hooks';
 import Image from 'next/image';
+import ProfileDropdown from '@/components/nav/profiledropdown';
+import MenuItem from '@/components/nav/menuitem';
 
 const MENU_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
