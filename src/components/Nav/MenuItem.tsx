@@ -13,7 +13,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props) => {
     classNames.push('block');
   }
 
-  const url = new URL(window.location.href);
+  const url = new URL(location.href);
   if (url.pathname === props.href) {
     classNames.push(NAV_MENU_SELECTED_BACKGROUND_COLOR_CLASS_NAMES);
   }
