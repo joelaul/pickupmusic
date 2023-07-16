@@ -37,8 +37,6 @@ export default function Home() {
         </div>
       </div>
 
-      <hr />
-
       <Badges />
     </main>
   );
