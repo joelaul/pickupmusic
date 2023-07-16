@@ -1,3 +1,4 @@
+import Classes from '@/app/classes/page';
 import Badges from '@/components/Badges/Badges';
 
 export default function Home() {
@@ -37,6 +38,10 @@ export default function Home() {
       </div>
 
       <Badges />
+
+      <hr />
+
+      <Classes />
     </main>
   );
 }
