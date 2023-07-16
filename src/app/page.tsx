@@ -15,7 +15,7 @@ export default function Home() {
         }}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-left mx-auto max-w-2xl">
+          <div className="text-left max-w-2xl">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               NEW RELEASE
             </h2>
