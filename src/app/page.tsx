@@ -1,4 +1,4 @@
-import Classes from '@/app/classes/page';
+import Classes from '@/components/Classes/Classes';
 import Badges from '@/components/Badges/Badges';
 
 export default function Home() {
