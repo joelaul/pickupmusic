@@ -19,6 +19,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge1.png',
         value: 0,
         acquired: true,
+        timeAcquired: new Date
     },
     { 
         index: 2,
@@ -29,6 +30,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge2.png',
         value: 1000,
         acquired: true,
+        timeAcquired: new Date
     },
     { 
         index: 3,
@@ -39,6 +41,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge3.png',
         value: 1000,
         acquired: true,
+        timeAcquired: new Date
     },
     { 
         index: 4,
@@ -49,6 +52,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge4.png',
         value: 250,
         acquired: true,
+        timeAcquired: new Date
     },
     { 
         index: 5,
@@ -59,6 +63,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge5.png',
         value: 500,
         acquired: true,
+        timeAcquired: new Date
     },
     { 
         index: 6,
@@ -69,6 +74,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge6.png',
         value: 125,
         acquired: true,
+        timeAcquired: new Date
     },
     { 
         index: 7,
@@ -79,6 +85,7 @@ export const BADGES: Badge[] = [
         src: 'badges/badge7.png',
         value: 500,
         acquired: false,
+        timeAcquired: null
     },
     { 
         index: 8,
@@ -89,9 +96,10 @@ export const BADGES: Badge[] = [
         src: 'badges/badge8.png',
         value: 500,
         acquired: false,
+        timeAcquired: null
     }
 ];
 
 export const BADGES_ACQUIRED: Badge[] = [...BADGES.filter((x) => x.acquired)];
 
-export const BADGES_UNACQUIRED: Badge[] = [...BADGES.filter((x) => !x.acquired)];
+export const BADGES_NOTACQUIRED: Badge[] = [...BADGES.filter((x) => !x.acquired)];
