@@ -10,15 +10,19 @@ export const metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.className}`}>
+
         <Nav />
         {children}
+
+        {/* ⬆️ JSX for all pages */}
+
       </body>
     </html>
   );

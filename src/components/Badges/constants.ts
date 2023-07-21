@@ -1,7 +1,3 @@
-{
-  /* TODO:  */
-}
-
 import { Badge } from '@/components/Badges/types';
 
 enum BadgeCategories {

@@ -8,17 +8,16 @@ import { classNames } from '@/lib/css/classNames';
 import { BADGES } from './constants';
 import { Badge } from './types';
 
-{
-  /* 
-TODO
-Handle unacquired badges appropriately (null error, goto course)
+{ /* TODO
+
 Lock sizing/overflow
+Handle unacquired badges appropriately (null error, goto course)
 Position red velvet background
 Add sort filters (newest, oldest, value)
 Modularize
 Responsive Design
-*/
-}
+
+*/}
 
 export default function Badges() {
   const [displayedBadge, setDisplayedBadge] = useState(BADGES[0]);
@@ -29,8 +28,7 @@ export default function Badges() {
   };
 
   return (
-    <div className="bg-indigo-200">
-      <br></br>
+    <div className="pt-6 bg-indigo-200">
 
       {/* Leading text */}
       <div>
@@ -42,29 +40,26 @@ export default function Badges() {
           <span className="font-bold">#pickup</span> next!
         </p>
       </div>
-      <br></br>
 
       {/* Content area */}
-      <div className="flex justify-center relative left-12">
+      <div className="py-8 flex justify-center relative left-12">
         {/* Badge grid */}
         <div className="focus:scale-105 max-w-lg grid grid-cols-4 gap-7 content-center">
           {BADGES.map((badge) => (
             <div
-              key="name"
               onMouseOver={() => setDisplayedBadge(badge)}
+              key="name"
               className={classNames(
                 badge.acquired ? '' : 'blur',
                 'rounded-full shadow-xl hover:scale-105 hover:cursor-pointer focus:scale-95',
               )}
             >
-              <a>
-                <img
-                  src={badge.src}
-                  title={badge.acquired ? badge.name : '???'}
-                  alt={badge.name}
-                  className="rounded-full border-black border-4 bg-yellow-400"
-                ></img>
-              </a>
+              <img
+                src={badge.src}
+                title={badge.acquired ? badge.name : '???'}
+                alt={badge.name}
+                className="rounded-full border-black border-4 bg-yellow-400"
+              ></img>
             </div>
           ))}
         </div>
@@ -92,8 +87,6 @@ export default function Badges() {
         </div>
       </div>
 
-      <br></br>
-      <hr></hr>
     </div>
   );
 }
