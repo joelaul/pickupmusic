@@ -1,3 +1,5 @@
+{/* TODO:  */}
+
 import { Badge } from '@/components/Badges/types';
 
 enum BadgeCategories {
@@ -13,7 +15,7 @@ export const BADGES: Badge[] = [
     { 
         index: 1,
         name: 'Picked It Up', 
-        description: 'Awarded for becoming a Pickupmusic member',
+        description: 'Awarded for becoming a #pickupmusic member',
         category: BadgeCategories.QUICKWIN,
         href: '/classes',
         src: 'badges/badge1.png',

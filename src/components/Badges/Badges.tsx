@@ -6,15 +6,29 @@
 import { useState } from 'react';
 import { classNames } from '@/lib/css/classNames';
 import { BADGES } from './constants';
+import { Badge } from './types';
 
-{/* TODO: Sort options: newest-oldest first, */}
+{/* 
+TODO
+Handle unacquired badges appropriately (null error, goto course)
+Lock sizing/overflow
+Position red velvet background
+Add sort filters (newest, oldest, value)
+Modularize
+Responsive Design
+*/}
 
 export default function Badges() {
 
   const [displayedBadge, setDisplayedBadge] = useState(BADGES[0]);
 
+  const forInfoPanel = (badge: Badge) => {
+    const {description, category, value, timeAcquired} = badge;
+    return {description, category, value, timeAcquired};
+  };
+
   return (
-    <>
+    <div className="bg-indigo-200">
       <br></br>
 
       {/* Leading text */}
@@ -25,11 +39,12 @@ export default function Badges() {
         <p className="mt-6 text-center text-lg leading-8 text-gray-900">
             Gaze upon your collection, or explore badges to <span className="font-bold">#pickup</span> next!
         </p>
+        
       </div>
       <br></br> 
 
       {/* Content area */}
-      <div className="flex justify-center">
+      <div className="flex justify-center relative left-12">
 
         {/* Badge grid */}
         <div className="focus:scale-105 max-w-lg grid grid-cols-4 gap-7 content-center">
@@ -55,7 +70,11 @@ export default function Badges() {
         </div>
 
         {/* Info panel */}
-        <div className="mx-12 flex flex-col items-center">
+        <div className="mx-16 px-4 py-4 w-104 flex flex-col items-center bg-indigo-100 border-black border-2 rounded-xl shadow-xl">
+        
+          <h1 className="bg-indigo-600 text-white text-2xl font-bold px-4 rounded-md py-2 ">{
+            displayedBadge.name}
+          </h1>
 
           <img
             className="h-32 w-32" 
@@ -65,9 +84,9 @@ export default function Badges() {
           </img>
 
           <table>
-            {Object.keys(displayedBadge).map((prop) => (
+            {Object.keys((forInfoPanel(displayedBadge))).map((prop) => (
               <tr key={prop}>
-                <th>{prop}</th>
+                <th className="text-left px-4">{prop.toUpperCase()}</th>
                 <td>{displayedBadge[prop].toString()}</td>
               </tr>
             ))}
@@ -78,6 +97,6 @@ export default function Badges() {
 
       <br></br>
       <hr></hr>
-    </>
+    </div>
   )
 }
