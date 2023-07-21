@@ -4,7 +4,6 @@ import Badges from '@/components/Badges/Badges';
 export default function Home() {
   return (
     <main>
-
       {/* Hero */}
       <div
         className="py-24 sm:py-32"
@@ -18,7 +17,6 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-left max-w-2xl">
-            
             {/* Leading text */}
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               NEW RELEASE
@@ -39,7 +37,6 @@ export default function Home() {
                 Learn now
               </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -47,7 +44,6 @@ export default function Home() {
       <Badges />
       <hr />
       <Classes />
-
     </main>
   );
 }
