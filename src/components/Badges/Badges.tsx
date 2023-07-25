@@ -38,15 +38,20 @@ export default function Badges() {
 
   const setInfoPanel = (badge: Badge): React.ReactNode => {
     const { awardedFor, category, value, timeAcquired } = badge;
-    const forInfoPanel = { awardedFor, category, value, timeAcquired };
+    const forInfoPanel = Object.keys({
+      awardedFor,
+      category,
+      value,
+      timeAcquired,
+    });
 
-    return Object.keys(forInfoPanel).map((prop) =>
+    return forInfoPanel.map((prop) =>
       prop == 'timeAcquired' && !displayedBadge.timeAcquired ? (
         ''
       ) : (
         <tr key={prop}>
           <th className="text-left px-4">{prop.toUpperCase()}</th>
-          <td>{displayedBadge[prop]?.toString() ?? ''}</td>
+          <td>{displayedBadge[prop as keyof Badge].toString()}</td>
         </tr>
       ),
     );
