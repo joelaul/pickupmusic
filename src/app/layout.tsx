@@ -19,6 +19,8 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <Nav />
         {children}
+
+        {/* ⬆️ JSX for all pages */}
       </body>
     </html>
   );
