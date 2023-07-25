@@ -1,4 +1,4 @@
-export default function Hero() { 
+export default function Hero() {
   return (
     <div
       className="py-24 sm:py-32"
@@ -12,9 +12,7 @@ export default function Hero() {
     >
       {/* Overlay */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        
         <div className="text-left max-w-2xl">
-
           {/* Leading text */}
           <h2 className="text-base font-semibold leading-7 text-indigo-600">
             NEW RELEASE
@@ -36,8 +34,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
       </div>
     </div>
-  )
+  );
 }
