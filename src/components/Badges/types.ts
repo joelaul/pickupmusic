@@ -1,17 +1,17 @@
-{
-  /* TODO: "timeAcquired" property should have which type? if Date, how to implement?*/
+export enum BadgeCategories {
+  QUICKWIN = 'Quick Win',
+  GENRE = 'Genre',
+  SPECIALTY = 'Specialty',
+  DIVERSITY = 'Diversity',
+  CONTRIBUTION = 'Contribution',
+  SESSION = 'Session',
 }
 
 export interface Badge {
-  [key: string]: any;
-
-  index: number;
   name: string;
-  description: string;
+  awardedFor: string;
   category: string;
-  href: string;
-  src: string;
+  imgSrc: string;
   value: number;
-  acquired: boolean;
   timeAcquired: Date | null;
 }

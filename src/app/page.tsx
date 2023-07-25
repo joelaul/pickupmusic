@@ -2,7 +2,7 @@ import Hero from '@/components/Hero/Hero';
 import Classes from '@/components/Classes/Classes';
 import Badges from '@/components/Badges/Badges';
 
-{/* index */}
+// index
 
 export default function Home() {
   return (

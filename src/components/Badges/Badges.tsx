@@ -8,28 +8,52 @@ import { classNames } from '@/lib/css/classNames';
 import { BADGES } from './constants';
 import { Badge } from './types';
 
-{ /* TODO
-
-Lock sizing/overflow
-Handle unacquired badges appropriately (null error, goto course)
-Position red velvet background
-Add sort filters (newest, oldest, value)
-Modularize
-Responsive Design
-
-*/}
-
 export default function Badges() {
   const [displayedBadge, setDisplayedBadge] = useState(BADGES[0]);
 
-  const forInfoPanel = (badge: Badge) => {
-    const { description, category, value, timeAcquired } = badge;
-    return { description, category, value, timeAcquired };
+  const setBadgeGrid = (BADGES: Badge[]): React.ReactNode => {
+    return BADGES.map((badge) => (
+      <div
+        onMouseOver={() => setDisplayedBadge(badge)}
+        key="name"
+        className={classNames(
+          badge.timeAcquired ? '' : 'blur-sm',
+          'rounded-full shadow-xl hover:scale-110 hover:cursor-pointer focus:scale-95',
+        )}
+      >
+        <img
+          src={badge.timeAcquired ? badge.imgSrc : 'logo-black.png'}
+          title={badge.timeAcquired ? badge.name : '???'}
+          alt={badge.name}
+          className={classNames(
+            badge.timeAcquired
+              ? 'bg-amber-400 hover:bg-amber-300'
+              : 'bg-gray-400 hover:bg-gray-300',
+            'rounded-full border-black border-4',
+          )}
+        ></img>
+      </div>
+    ));
+  };
+
+  const setInfoPanel = (badge: Badge): React.ReactNode => {
+    const { awardedFor, category, value, timeAcquired } = badge;
+    const forInfoPanel = { awardedFor, category, value, timeAcquired };
+
+    return Object.keys(forInfoPanel).map((prop) =>
+      prop == 'timeAcquired' && !displayedBadge.timeAcquired ? (
+        ''
+      ) : (
+        <tr key={prop}>
+          <th className="text-left px-4">{prop.toUpperCase()}</th>
+          <td>{displayedBadge[prop]?.toString() ?? ''}</td>
+        </tr>
+      ),
+    );
   };
 
   return (
     <div className="pt-6 bg-indigo-200">
-
       {/* Leading text */}
       <div>
         <h1 className="text-center text-3xl font-bold tracking-tight text-black-50 sm:text-4xl">
@@ -42,51 +66,48 @@ export default function Badges() {
       </div>
 
       {/* Content area */}
-      <div className="py-8 flex justify-center relative left-12">
+      <div
+        className="pt-8 flex flex-col items-center
+       lg:flex-row lg:justify-center lg:pt-0"
+      >
         {/* Badge grid */}
-        <div className="focus:scale-105 max-w-lg grid grid-cols-4 gap-7 content-center">
-          {BADGES.map((badge) => (
-            <div
-              onMouseOver={() => setDisplayedBadge(badge)}
-              key="name"
-              className={classNames(
-                badge.acquired ? '' : 'blur',
-                'rounded-full shadow-xl hover:scale-105 hover:cursor-pointer focus:scale-95',
-              )}
-            >
-              <img
-                src={badge.src}
-                title={badge.acquired ? badge.name : '???'}
-                alt={badge.name}
-                className="rounded-full border-black border-4 bg-yellow-400"
-              ></img>
-            </div>
-          ))}
+        <div
+          className="focus:scale-105 px-4 max-w-md grid grid-cols-4 gap-4 content-center 
+        lg:gap-5 lg:mx-8"
+        >
+          {setBadgeGrid(BADGES)}
         </div>
 
         {/* Info panel */}
-        <div className="mx-16 px-4 py-4 w-104 flex flex-col items-center bg-indigo-100 border-black border-2 rounded-xl shadow-xl">
-          <h1 className="bg-indigo-600 text-white text-2xl font-bold px-4 rounded-md py-2 ">
-            {displayedBadge.name}
+        <div className="flex flex-col my-10 px-4 py-4 max-w-md bg-indigo-100 border-black border-2 rounded-xl shadow-2xl lg:max-w-auto lg:mx-8">
+          <h1 className="bg-indigo-600 text-white text-2xl font-bold px-4 rounded-md py-2">
+            {displayedBadge.timeAcquired ? displayedBadge.name : '???'}
           </h1>
 
           <img
-            className="h-32 w-32"
-            src={displayedBadge.src}
+            className="h-32 w-32 self-center"
+            src={
+              displayedBadge.timeAcquired
+                ? displayedBadge.imgSrc
+                : 'logo-black.png'
+            }
             alt={displayedBadge.name}
           ></img>
 
-          <table>
-            {Object.keys(forInfoPanel(displayedBadge)).map((prop) => (
-              <tr key={prop}>
-                <th className="text-left px-4">{prop.toUpperCase()}</th>
-                <td>{displayedBadge[prop].toString()}</td>
-              </tr>
-            ))}
-          </table>
+          <table>{setInfoPanel(displayedBadge)}</table>
+
+          {displayedBadge.timeAcquired ? (
+            ''
+          ) : (
+            <a
+              href="/classes"
+              className="mt-6 self-center font-bold hover:text-indigo-600"
+            >
+              <p>Continue the course to #pickup this badge!</p>
+            </a>
+          )}
         </div>
       </div>
-
     </div>
   );
 }

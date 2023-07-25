@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { classNames } from '@/lib/css/classNames';
 
 import { MENU_ITEMS } from '@/components/Nav/constants';
-import { BADGES_ACQUIRED } from '@/components/Badges/constants';
+import { BADGES, BADGES_ACQUIRED } from '@/components/Badges/constants';
 
 export const Nav = () => {
   const pathname = usePathname();
@@ -79,15 +79,17 @@ export const Nav = () => {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Badge preview */}
                 <div className="h-6 grid grid-cols-5 gap-1 hover:scale-110   hover:cursor-pointer">
-                  {BADGES_ACQUIRED.slice(-5).map(({ src }) => (
-                    <div key="name">
-                      <img
-                        alt="5 newest badges"
-                        src={src}
-                        className="h-6 rounded-full bg-yellow-400"
-                      ></img>
-                    </div>
-                  ))}
+                  {BADGES_ACQUIRED(BADGES)
+                    .slice(-5)
+                    .map(({ imgSrc }) => (
+                      <div key="name">
+                        <img
+                          alt="5 newest badges"
+                          src={imgSrc}
+                          className="h-6 rounded-full bg-yellow-400 hover:bg-yellow-300"
+                        ></img>
+                      </div>
+                    ))}
                 </div>
 
                 {/* Profile dropdown */}
