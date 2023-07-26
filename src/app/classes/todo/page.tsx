@@ -135,7 +135,7 @@ export default function Class() {
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
                 Do you enjoy lorem ipsum soup?
               </h2>
-              <h3>Here's some more.</h3>
+              <h3>Here is some more.</h3>
               <p className="mt-6">
                 Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam
                 consequat in. Convallis arcu ipsum urna nibh. Pharetra, euismod
