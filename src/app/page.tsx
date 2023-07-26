@@ -1,6 +1,12 @@
 import Hero from '@/components/Hero/Hero';
 import Classes from '@/components/Classes/Classes';
-import Badges from '@/components/Badges/Badges';
+
+import dynamic from 'next/dynamic';
+
+// TODO(jared): Figure out why SSR fails when badges is involved.
+const Badges = dynamic(() => import('@/components/Badges/Badges'), {
+  ssr: false,
+});
 
 // index
 
