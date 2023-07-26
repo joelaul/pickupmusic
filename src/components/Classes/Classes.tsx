@@ -7,12 +7,12 @@ export default function Classes() {
     <>
       <br />
 
-      <div className="text-center pb-12">
+      <div className="text-center">
         <h2 className="text-base font-bold text-indigo-600">
-          We have the best equipment in the market
+          Want to learn something new?
         </h2>
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
-          Check our awesome team members
+          Check out our classes!
         </h1>
       </div>
 
