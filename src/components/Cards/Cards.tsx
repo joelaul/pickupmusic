@@ -17,7 +17,7 @@ export const Cards: React.FC<CardProps> = (props) => {
                 <Image
                   alt={card.img.alt}
                   className="object-center object-cover h-auto w-full"
-                  src="/cards/groove.png"
+                  src={card.img.src}
                   width={2700}
                   height={1900}
                 />
