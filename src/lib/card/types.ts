@@ -3,6 +3,5 @@ export type Card = {
   subtitle: string;
   imgSrc: string;
   imgAlt: string;
-  hrefText: string;
   href: string;
 };
