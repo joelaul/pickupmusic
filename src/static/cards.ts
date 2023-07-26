@@ -4,7 +4,7 @@ export const CARDS: Card[] = [
   {
     title: 'GROOVE',
     subtitle: 'Kelyn Crapp',
-    href: 'TODO',
+    href: '/classes/todo',
     img: {
       alt: 'GROOVE by Keln Crapp',
       height: 1920,
@@ -15,7 +15,7 @@ export const CARDS: Card[] = [
   {
     title: 'BEGINNER',
     subtitle: 'Joey Weidner',
-    href: 'TODO',
+    href: '/classes/todo',
     img: {
       alt: 'BEGINNER by Joey Weidner',
       height: 1920,
@@ -26,7 +26,7 @@ export const CARDS: Card[] = [
   {
     title: 'INTERMEDIATE',
     subtitle: 'Karl Kerfoot',
-    href: 'TODO',
+    href: '/classes/todo',
     img: {
       alt: 'INTERMEDIATE by Karl Kerfoot',
       height: 1920,
@@ -37,7 +37,7 @@ export const CARDS: Card[] = [
   {
     title: 'CAGED',
     subtitle: 'Molly Miller',
-    href: 'TODO',
+    href: '/classes/todo',
     img: {
       alt: 'CAGED by Molly Miller',
       height: 1920,
@@ -48,7 +48,7 @@ export const CARDS: Card[] = [
   {
     title: 'COUNTRY',
     subtitle: 'Daniel Donato',
-    href: 'TODO',
+    href: '/classes/todo',
     img: {
       alt: 'COUNTRY by Daniel Donato',
       height: 1920,
@@ -59,7 +59,7 @@ export const CARDS: Card[] = [
   {
     title: 'NEOSOUL',
     subtitle: 'Melanie Faye',
-    href: 'TODO',
+    href: '/classes/todo',
     img: {
       alt: 'NEOSOUL by Melanie Faye',
       height: 1920,
