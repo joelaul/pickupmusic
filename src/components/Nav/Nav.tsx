@@ -80,7 +80,7 @@ export const Nav = () => {
                 {/* Badge preview */}
                 <div className="h-6 grid grid-cols-5 gap-1 hover:scale-110   hover:cursor-pointer">
                   {BADGES_ACQUIRED(BADGES)
-                    .slice(-5)
+                    .slice(-3)
                     .map(({ imgSrc }) => (
                       <div key="name">
                         <img
