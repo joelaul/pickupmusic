@@ -1,7 +1,8 @@
+import { Img } from '@/lib/img/types';
+
 export type Card = {
   title: string;
   subtitle: string;
-  imgSrc: string;
-  imgAlt: string;
   href: string;
+  img: Img;
 };
