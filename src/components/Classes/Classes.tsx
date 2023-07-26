@@ -1,4 +1,5 @@
 import { Cards } from '@/components/Cards/Cards';
+import { CARDS } from '@/static/cards';
 
 // TODO(jared): Only show a few classes?
 export default function Classes() {
@@ -15,7 +16,7 @@ export default function Classes() {
         </h1>
       </div>
 
-      <Cards cards={[]} />
+      <Cards cards={CARDS} />
     </>
   );
 }

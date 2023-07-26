@@ -1,6 +1,7 @@
 // For https://app.pickupmusic.com/master-classes
 
 import { Cards } from '@/components/Cards/Cards';
+import { CARDS } from '@/static/cards';
 
 export default function Classes() {
   return (
@@ -16,7 +17,7 @@ export default function Classes() {
         </h1>
       </div>
 
-      <Cards cards={[]} />
+      <Cards cards={CARDS} />
     </>
   );
 }
