@@ -84,7 +84,7 @@ export const Nav = () => {
                     .map(({ imgSrc }) => (
                       <div key="name">
                         <img
-                          alt="5 newest badges"
+                          alt="3 newest badges"
                           src={imgSrc}
                           className="h-6 rounded-full bg-yellow-400 hover:bg-yellow-300"
                         ></img>
