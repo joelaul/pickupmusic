@@ -18,8 +18,8 @@ export const Cards: React.FC<CardProps> = (props) => {
                   alt={card.img.alt}
                   className="object-center object-cover h-auto w-full"
                   src={card.img.src}
-                  width={2700}
-                  height={1900}
+                  width={540}
+                  height={380}
                 />
               </div>
               <div className="text-center py-8 sm:py-6">
