@@ -5,7 +5,7 @@ export default function Hero() {
     <div
       className="py-24 sm:py-32"
       style={{
-        backgroundImage: 'url(splash.jpg)',
+        backgroundImage: 'url(/splash.jpg)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
