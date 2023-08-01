@@ -66,11 +66,3 @@ export const BADGES: Badge[] = [
     timeAcquired: null,
   },
 ];
-
-export const BADGES_ACQUIRED = (BADGES: Badge[]): Badge[] => {
-  return [...BADGES.filter((x) => x.timeAcquired)];
-};
-
-export const BADGES_UNACQUIRED = (BADGES: Badge[]): Badge[] => {
-  return [...BADGES.filter((x) => !x.timeAcquired)];
-};

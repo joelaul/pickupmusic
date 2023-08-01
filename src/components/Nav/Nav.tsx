@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -9,14 +9,21 @@ import { usePathname } from 'next/navigation';
 import { classNames } from '@/lib/css/classNames';
 
 import { MENU_ITEMS } from '@/components/Nav/constants';
-import { BADGES, BADGES_ACQUIRED } from '@/components/Badges/constants';
+import Link from 'next/link';
+import { Badge } from '@/components/Badges/types';
 
-export const Nav = () => {
+export type NavProps = {
+  badges: Badge[];
+};
+
+export const Nav: React.FC<NavProps> = (props) => {
   const pathname = usePathname();
 
   function isCurrent(href: string) {
     return pathname === href;
   }
+
+  const acquiredBadges = props.badges.filter((badge) => !!badge.timeAcquired);
 
   return (
     <Disclosure as="nav" className="bg-indigo-800">
@@ -42,22 +49,22 @@ export const Nav = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 {/* Pickupmusic logo */}
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="/">
+                  <Link href="/">
                     <Image
                       className="h-8 w-auto"
                       src="/logo.png"
-                      width={500}
-                      height={500}
+                      width={64}
+                      height={64}
                       alt="pickupmusic"
                     />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Menu items */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {MENU_ITEMS.map(({ title, href }) => (
-                      <a
+                      <Link
                         key={title}
                         href={href}
                         className={classNames(
@@ -69,7 +76,7 @@ export const Nav = () => {
                         aria-current={isCurrent(href) ? 'page' : undefined}
                       >
                         {title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -79,17 +86,15 @@ export const Nav = () => {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Badge preview */}
                 <div className="h-6 grid grid-cols-3 gap-1 hover:scale-110   hover:cursor-pointer">
-                  {BADGES_ACQUIRED(BADGES)
-                    .slice(-3)
-                    .map(({ imgSrc }) => (
-                      <div key="name">
-                        <img
-                          alt="3 newest badges"
-                          src={imgSrc}
-                          className="h-6 rounded-full bg-yellow-400 hover:bg-yellow-300"
-                        ></img>
-                      </div>
-                    ))}
+                  {acquiredBadges.slice(-3).map(({ imgSrc }) => (
+                    <div key={imgSrc}>
+                      <img
+                        alt="3 newest badges"
+                        src={imgSrc}
+                        className="h-6 rounded-full bg-yellow-400 hover:bg-yellow-300"
+                      ></img>
+                    </div>
+                  ))}
                 </div>
 
                 {/* Profile dropdown */}

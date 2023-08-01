@@ -1,6 +1,7 @@
 import { Nav } from '@/components/Nav/Nav';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import { BADGES } from '@/static/badges';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.className}`}>
-        <Nav />
+        <Nav badges={BADGES} />
         {children}
 
         {/* ⬆️ JSX for all pages */}
