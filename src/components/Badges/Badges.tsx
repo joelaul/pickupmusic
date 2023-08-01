@@ -41,7 +41,7 @@ export default function Badges(props: BadgesProps) {
           {badges.map((badge) => (
             <div
               onMouseOver={() => setDisplayedBadge(badge)}
-              key="name"
+              key={badge.name}
               className={classNames(
                 badge.timeAcquired ? '' : 'blur-sm',
                 'rounded-full shadow-xl hover:scale-110 hover:cursor-pointer focus:scale-95',
