@@ -10,6 +10,7 @@ import { classNames } from '@/lib/css/classNames';
 
 import { MENU_ITEMS } from '@/components/Nav/constants';
 import { BADGES, BADGES_ACQUIRED } from '@/components/Badges/constants';
+import Link from 'next/link';
 
 export const Nav = () => {
   const pathname = usePathname();
@@ -42,22 +43,22 @@ export const Nav = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 {/* Pickupmusic logo */}
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="/">
+                  <Link href="/">
                     <Image
                       className="h-8 w-auto"
                       src="/logo.png"
-                      width={500}
-                      height={500}
+                      width={64}
+                      height={64}
                       alt="pickupmusic"
                     />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Menu items */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {MENU_ITEMS.map(({ title, href }) => (
-                      <a
+                      <Link
                         key={title}
                         href={href}
                         className={classNames(
@@ -69,7 +70,7 @@ export const Nav = () => {
                         aria-current={isCurrent(href) ? 'page' : undefined}
                       >
                         {title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

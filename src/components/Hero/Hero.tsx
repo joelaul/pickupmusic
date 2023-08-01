@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Hero() {
   return (
     <div
@@ -26,12 +28,12 @@ export default function Hero() {
 
           {/* link - Learn now */}
           <div className="mt-10 flex items-center justify-items-start gap-x-6">
-            <a
+            <Link
               href="/classes/todo"
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Learn now
-            </a>
+            </Link>
           </div>
         </div>
       </div>

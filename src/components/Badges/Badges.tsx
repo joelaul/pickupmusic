@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { classNames } from '@/lib/css/classNames';
 import { Badge } from './types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export type BadgesProps = {
   badges: Badge[];
@@ -113,12 +114,12 @@ export default function Badges(props: BadgesProps) {
           {displayedBadge.timeAcquired ? (
             ''
           ) : (
-            <a
+            <Link
               href="/classes"
               className="mt-6 self-center font-bold hover:text-indigo-600"
             >
-              <p>Continue the course to #pickup this badge!</p>
-            </a>
+              Continue the course to #pickup this badge!
+            </Link>
           )}
         </div>
       </div>

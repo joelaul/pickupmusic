@@ -1,6 +1,7 @@
 import { Card } from '@/lib/card/types';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export type CardProps = {
   cards: Card[];
@@ -11,7 +12,7 @@ export const Cards: React.FC<CardProps> = (props) => {
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {props.cards.map((card, index) => (
-          <a key={index} href={card.href}>
+          <Link key={index} href={card.href}>
             <div className="border-2 border-gray-100 w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
               <div>
                 <Image
@@ -31,7 +32,7 @@ export const Cards: React.FC<CardProps> = (props) => {
                 </p>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>
