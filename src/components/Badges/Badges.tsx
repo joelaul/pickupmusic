@@ -47,7 +47,7 @@ export default function Badges(props: BadgesProps) {
                 'rounded-full shadow-xl hover:scale-110 hover:cursor-pointer focus:scale-95',
               )}
             >
-              <Image
+              <img
                 src={badge.timeAcquired ? badge.imgSrc : '/logo-black.png'}
                 width={100}
                 height={100}
@@ -59,7 +59,7 @@ export default function Badges(props: BadgesProps) {
                     : 'bg-gray-400 hover:bg-gray-300',
                   'rounded-full border-black border-4',
                 )}
-              ></Image>
+              ></img>
             </div>
           ))}
         </div>
@@ -70,7 +70,7 @@ export default function Badges(props: BadgesProps) {
             {displayedBadge.timeAcquired ? displayedBadge.name : '???'}
           </h1>
 
-          <Image
+          <img
             width={100}
             height={100}
             className="h-32 w-32 self-center"
@@ -80,7 +80,7 @@ export default function Badges(props: BadgesProps) {
                 : '/logo-black.png'
             }
             alt={displayedBadge.name}
-          ></Image>
+          ></img>
 
           <table className="table-auto">
             <thead>

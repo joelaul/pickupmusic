@@ -15,7 +15,7 @@ export const Cards: React.FC<CardProps> = (props) => {
           <Link key={index} href={card.href}>
             <div className="border-2 border-gray-100 w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
               <div>
-                <Image
+                <img
                   alt={card.img.alt}
                   className="object-center object-cover h-auto w-full"
                   src={card.img.src}
