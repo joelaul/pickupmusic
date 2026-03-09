@@ -1,4 +1,5 @@
-import { Card } from '@/lib/card/types';
+/* eslint-disable @next/next/no-img-element */
+import { Card } from '@/components/Cards/types';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';

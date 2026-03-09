@@ -1,5 +1,5 @@
 import { Cards } from '@/components/Cards/Cards';
-import { CARDS } from '@/static/cards';
+import { CARDS } from '@/static/cards'; /* mock DB */
 
 // TODO(jared): Only show a few classes?
 export default function Classes() {
@@ -16,6 +16,7 @@ export default function Classes() {
         </h1>
       </div>
 
+      {/* In practice, backend connects to DB, then frontend sends request and passes response object to component as prop */}
       <Cards cards={CARDS} />
     </>
   );

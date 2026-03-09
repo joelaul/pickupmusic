@@ -1,4 +1,4 @@
-import { Card } from '@/lib/card/types';
+import { Card } from '@/components/Cards/types';
 
 export const CARDS: Card[] = [
   {
@@ -7,20 +7,20 @@ export const CARDS: Card[] = [
     href: '/classes/todo',
     img: {
       alt: 'GROOVE by Keln Crapp',
-      height: 1920,
+      height: 960,
       width: 2700,
       src: '/cards/groove.png',
     },
   },
   {
     title: 'BEGINNER',
-    subtitle: 'Joey Weidner',
+    subtitle: 'Clavicular',
     href: '/classes/todo',
     img: {
-      alt: 'BEGINNER by Joey Weidner',
-      height: 1920,
-      width: 2700,
-      src: '/cards/beginner.png',
+      alt: 'LOOKSMAXXING by Clavicular',
+      height: 960,
+      width: 1350,
+      src: '/cards/beginner-clav.png',
     },
   },
   {
@@ -29,8 +29,8 @@ export const CARDS: Card[] = [
     href: '/classes/todo',
     img: {
       alt: 'INTERMEDIATE by Karl Kerfoot',
-      height: 1920,
-      width: 2700,
+      height: 960,
+      width: 1350,
       src: '/cards/intermediate.png',
     },
   },
@@ -40,8 +40,8 @@ export const CARDS: Card[] = [
     href: '/classes/todo',
     img: {
       alt: 'CAGED by Molly Miller',
-      height: 1920,
-      width: 2700,
+      height: 960,
+      width: 1350,
       src: '/cards/caged.png',
     },
   },
@@ -51,8 +51,8 @@ export const CARDS: Card[] = [
     href: '/classes/todo',
     img: {
       alt: 'COUNTRY by Daniel Donato',
-      height: 1920,
-      width: 2700,
+      height: 960,
+      width: 1350,
       src: '/cards/country.png',
     },
   },
@@ -62,8 +62,8 @@ export const CARDS: Card[] = [
     href: '/classes/todo',
     img: {
       alt: 'NEOSOUL by Melanie Faye',
-      height: 1920,
-      width: 2700,
+      height: 960,
+      width: 1350,
       src: '/cards/neosoul.png',
     },
   },

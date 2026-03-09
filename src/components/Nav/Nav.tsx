@@ -16,14 +16,14 @@ export type NavProps = {
   badges: Badge[];
 };
 
-export const Nav: React.FC<NavProps> = (props) => {
+export const Nav: React.FC<NavProps> = ({ badges }) => {
   const pathname = usePathname();
 
   function isCurrent(href: string) {
     return pathname === href;
   }
 
-  const acquiredBadges = props.badges.filter((badge) => !!badge.timeAcquired);
+  const acquiredBadges = badges.filter((badge) => !!badge.timeAcquired);
 
   return (
     <Disclosure as="nav" className="bg-indigo-800">
