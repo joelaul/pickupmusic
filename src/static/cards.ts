@@ -13,7 +13,7 @@ export const CARDS: Card[] = [
     },
   },
   {
-    title: 'BEGINNER',
+    title: 'LOOKSMAXXING',
     subtitle: 'Clavicular',
     href: '/classes/todo',
     img: {
@@ -24,11 +24,11 @@ export const CARDS: Card[] = [
     },
   },
   {
-    title: 'INTERMEDIATE',
+    title: 'DAPPING',
     subtitle: 'Karl Kerfoot',
     href: '/classes/todo',
     img: {
-      alt: 'INTERMEDIATE by Karl Kerfoot',
+      alt: 'DAPPING by Karl Kerfoot',
       height: 960,
       width: 1350,
       src: '/cards/intermediate.png',
